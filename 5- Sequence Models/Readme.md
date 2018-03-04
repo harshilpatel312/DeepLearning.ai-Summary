@@ -354,12 +354,12 @@ Here are the course summary as its given on the course [link](https://www.course
   - ![](Images/24.png)
 - Hint that BRNNs are **acyclic graph**!
 - The forward propagation goes from left to right, and from right to left. It learns from both sides.
-- To make predictions we use y<sup>^\<t><sup> by using the two activations that comes from left and right.
+- To make predictions we use y<sup>\<t></sup> by using the two activations that comes from left and right. e.g. to compute y<sup>\<3></sup>, information from x<sup>\<1></sup>, x<sup>\<2></sup>, x<sup>\<3></sup> flows in from the forward activations and x<sup>\<4></sup> from the backward activations.
 - The blocks here can be any RNN block including the basic RNNs, LSTMs, or GRUs.
 - For a lot of NLP or text processing problems, a BRNN with LSTM appears to be commonly used.
 - The disadvantage of BRNNs that you need the entire sequence before you can process it. For example in live speech recognition if you used BRNNs you will need to wait for the person who speaks to stop to take the entire sequence and then make your predictions.
 ### Deep RNNs
-
+ 
 - In a lot of cases the standard one layer RNNs will solve your problem. But in some problems its useful to stack some RNN layers to make a deeper network.
 - For example, a deep RNN with 3 layers would look like this:
   - ![](Images/25.png)
