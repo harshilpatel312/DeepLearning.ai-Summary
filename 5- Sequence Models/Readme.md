@@ -767,8 +767,10 @@ Here are the course summary as its given on the course [link](https://www.course
   - To do that, we calculate P(y<sup>*</sup> | X) and P(y<sup>^</sup> | X). There are two cases:
     - Case 1 (P(y<sup>*</sup> | X)  > P(y<sup>^</sup> | X)): 
       - Conclusion: Beam search is at fault.
+      - Reason: We know that y<sup>*</sup> is obviously superior than y<sup>^</sup>, and model is also telling us that y<sup>*</sup> is better than y<sup>^</sup>. So basically there are no mistakes within our model and to improve the performance, we have to tune beam search.
     - Case 2 (P(y<sup>*</sup> | X)  <= P(y<sup>^</sup> | X)): 
       - Conclusion: RNN model is at fault.
+      - Reason: We know that y<sup>*</sup> is obviously superior than y<sup>^</sup> but the model is outputting the contrary. So there is a problem with the model. Therefore, diagnose the RNN.
 - The error analysis process is as following:
   - You choose N error examples and make the following table:
     - ![](Images/59.png)
