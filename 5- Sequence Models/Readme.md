@@ -870,20 +870,18 @@ Here are the course summary as its given on the course [link](https://www.course
 - First we will have an bidirectional RNN - most common is LSTMs - that encodes French language:
   - ![](Images/68.png)
 - For learning purposes, lets assume that a<sup>\<t></sup> will include the both directions.
-- We will have an RNN to extract the output using a context `c` which is computer using the attention weights. This denotes how much information do it needs to look in a<sup>\<t></sup>
+- Basic information flow: Trained BRNN outputs a<sup>\<t'></sup> which includes information from both directions; We compute attention weights which tells us the amount of "attention" the output y<sup>\<t></sup> should pay to all a<sup>\<t'></sup>s. Use attention weights and activations a<sup>\<t'></sup>s to compute `c`.
   - ![](Images/69.png)
 - Sum of the attention weights for each element in the sequence should be 1:
   - ![](Images/70.png)
 - Also the context `c` are calculated using this equation:
   - ![](Images/71.png)
-- Lets see how can we compute the attention weights:
-  - So alpha<sup>\<t, t'></sup> = amount of attention y<sup>\<t></sup> should pay to a<sup>\<t'></sup>
-    - Like for example we payed attention to the first three words through alpha<sup>\<1,1></sup>, alpha<sup>\<1,2></sup>, alpha<sup>\<1,3></sup>
-  - We are going to softmax the attention weights so that their sum is 1:
-    - ![](Images/72.png)
-  - Now we need to know how to calculate e<sup>\<t, t'></sup>. We will compute e using a small neural network:
-    - ![](Images/73.png)
-    - s<sup>\<t-1></sup> is the hidden state of the RNN s, and a<sup>\<t'></sup> is the activation of the other bidirectional RNN. 
+- For next output y<sup>\<2></sup>, we use new `c` computed using new attention weights and activations, and previous output y<sup>\<1></sup>
+- We are going to softmax the attention weights so that their sum is 1:
+  - ![](Images/72.png)
+- Now we need to know how to calculate e<sup>\<t, t'></sup>. We will compute e using a small neural network:
+  - ![](Images/73.png)
+  - s<sup>\<t-1></sup> is the hidden state of the RNN s, and a<sup>\<t'></sup> is the activation of the other bidirectional RNN. 
 - One of the disadvantages of this algorithm is that it takes quadratic time or quadratic cost to run.
 - One fun way to see how attention works is by visualizing the attention weights:
   - ![](Images/74.png)
