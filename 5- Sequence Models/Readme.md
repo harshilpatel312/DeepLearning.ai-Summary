@@ -838,7 +838,7 @@ Here are the course summary as its given on the course [link](https://www.course
 - Blue score is has several open source implementations and used in variety of systems like machine translation and image captioning.
 
 #### Attention Model Intuition
-
+(FOR BETTER EXPLANATION, CHECK THE 'NEURAL MACHINE TRANSLATION AND ATTENTION MECHANISMS' ASSIGNMENT)
 - So far we are using sequence to sequence models with an encoder and decoders. There are a technique called attention which makes these models even better.
 - The attention algorithm, the attention idea has been one of the most influential ideas in deep learning. 
 - The problem of long sequences:
