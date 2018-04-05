@@ -27,15 +27,6 @@ This is by far the best course series on deep learning that I've taken. Enjoy!
 > We will help you master Deep Learning, understand how to apply it, and build a career in AI.
 
 
-
-## Specialization Certificate
-
-At last I've successfully completed the specialization and earned my [certificate](https://coursera.org/verify/specialization/DTTJC9Y5B8U6)!
-
-![](Certificate.png)
-
-
-
 ## Reviews
 
 As [DeepLearning.ai](https://deeplearning.ai) is one of the most popular courses in the field of AI/ML/DL, there are some good reviews regarding some or whole of the specialization courses.
